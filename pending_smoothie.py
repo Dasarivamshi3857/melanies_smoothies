@@ -9,7 +9,7 @@ st.write(
 )
 
 cnx = st.connection("snowflake")
-session = cnx.session
+session = cnx.session()
 my_dataframe = session.table("smoothies.public.orders") \
     .filter(col("ORDER_FILLED") == 0) \
     .collect()
